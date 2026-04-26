@@ -40,6 +40,7 @@ namespace HydraMenu.features
 			}
 		}
 
+		/*
 		[HarmonyPatch(typeof(AprilFoolsMode), nameof(AprilFoolsMode.ShouldFlipSkeld))]
 		public static class FlippedSkeld
 		{
@@ -51,6 +52,7 @@ namespace HydraMenu.features
 				return false;
 			}
 		}
+		*/
 
 		[HarmonyPatch(typeof(PlayerControl), nameof(PlayerControl.SetLevel))]
 		public static class BlockLowLevels
