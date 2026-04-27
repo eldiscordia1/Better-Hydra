@@ -1,4 +1,5 @@
-﻿using Hazel;
+﻿using AmongUs.InnerNet.GameDataMessages;
+using Hazel;
 
 namespace HydraMenu
 {
@@ -35,7 +36,7 @@ namespace HydraMenu
 			MessageWriter writer = AmongUsClient.Instance.StartRpcImmediately(
 				PlayerControl.LocalPlayer.NetId,
 				(byte)RpcCalls.PlayAnimation,
-				SendOption.None,
+				SendOption.Reliable,
 				-1
 			);
 
@@ -45,6 +46,32 @@ namespace HydraMenu
 
 			// Render the task animation for ourselves
 			PlayerControl.LocalPlayer.PlayAnimation(animation);
+		}
+
+		public static void SendDataFlag(uint netId, MessageWriter msg, int targetClientId = -1)
+		{
+			MessageWriter writer = MessageWriter.Get(SendOption.Reliable);
+
+			if(targetClientId == -1)
+			{
+				writer.StartMessage(InnerNet.Tags.GameData);
+				writer.Write(AmongUsClient.Instance.GameId);
+			}
+			else
+			{
+				writer.StartMessage(InnerNet.Tags.GameDataTo);
+				writer.Write(AmongUsClient.Instance.GameId);
+				writer.WritePacked(targetClientId);
+			}
+
+			writer.StartMessage((byte)GameDataTypes.DataFlag);
+			writer.WritePacked(netId);
+			writer.Write(msg, false);
+			writer.EndMessage();
+
+			writer.EndMessage();
+			AmongUsClient.Instance.SendOrDisconnect(writer);
+			writer.Recycle();
 		}
 	}
 }

@@ -29,22 +29,11 @@ namespace HydraMenu
 			}
 
 			MessageWriter writer = MessageWriter.Get(SendOption.Reliable);
-			writer.StartMessage(InnerNet.Tags.GameDataTo);
-			writer.Write(AmongUsClient.Instance.GameId);
-			writer.WritePacked(targetClientId);
-
-			writer.StartMessage((byte)GameDataTypes.DataFlag);
-			writer.WritePacked(GameManager.Instance.NetId);
-
 			writer.StartMessage((byte)FindLogicOptionsIndex());
 			writer.WriteBytesAndSize(GameManager.Instance.LogicOptions.gameOptionsFactory.ToBytes(options, AprilFoolsMode.IsAprilFoolsModeToggledOn));
 			writer.EndMessage();
 
-			writer.EndMessage();
-			writer.EndMessage();
-
-			AmongUsClient.Instance.SendOrDisconnect(writer);
-			writer.Recycle();
+			Network.SendDataFlag(GameManager.Instance.NetId, writer, targetClientId);
 		}
 
 		private static int FindLogicOptionsIndex()
