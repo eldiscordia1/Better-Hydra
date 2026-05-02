@@ -17,7 +17,7 @@ namespace HydraMenu.anticheat.rpc
 				player.SetName(clientData.PlayerName);
 				blockRpc = true;
 
-				Anticheat.Flag(player, $"{player.Data.PlayerName} requested a name that does not match their name in the login handshake");
+				Anticheat.Flag(player, $"{player.Data.PlayerName} requested a name that does not match their name in the login handshake.");
 			}
 
 			if(requestedName.Length > MAX_NAME_LENGTH)

@@ -16,7 +16,7 @@ namespace HydraMenu.routines
 		{
 			if(PlayerControl.LocalPlayer == null || !AmongUsClient.Instance.AmHost)
 			{
-				this.Enabled = false;
+				Enabled = false;
 				Hydra.notifications.Send("Disco", "Disco mode has been disabled as you are not the host or you left the lobby.", 5);
 
 				return;

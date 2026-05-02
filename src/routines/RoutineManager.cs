@@ -8,6 +8,7 @@ namespace HydraMenu.routines
 		public DiscoHostRoutine discoHost = new DiscoHostRoutine();
 		public DoorTrollerRoutine doorTroller = new DoorTrollerRoutine();
 		public PlayerFollowerRoutine playerFollower = new PlayerFollowerRoutine();
+		public ReportBodySpam reportBodySpam = new ReportBodySpam();
 
 		public void Update()
 		{
@@ -15,6 +16,7 @@ namespace HydraMenu.routines
 			if(discoHost.Enabled) discoHost.Run();
 			if(doorTroller.Enabled) doorTroller.Run();
 			if(playerFollower._enabled) playerFollower.Run();
+			if(reportBodySpam.Enabled) reportBodySpam.Run();
 		}
 	}
 }

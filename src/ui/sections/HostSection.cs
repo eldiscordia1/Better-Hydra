@@ -40,6 +40,8 @@ namespace HydraMenu.ui.sections
 			Host.BlockLowLevels.MinLevel = (uint)GUILayout.HorizontalSlider(Host.BlockLowLevels.MinLevel, 0, 100);
 			GUILayout.EndHorizontal();
 
+			Hydra.routines.reportBodySpam.Enabled = GUILayout.Toggle(Hydra.routines.reportBodySpam.Enabled, "Spam Report Bodies");
+
 			if(GUILayout.Button("Force Start Game"))
 			{
 				AmongUsClient.Instance.StartGame();

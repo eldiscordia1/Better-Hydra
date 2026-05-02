@@ -1,5 +1,4 @@
 ﻿using Hazel;
-using InnerNet;
 using System;
 
 namespace HydraMenu.anticheat.rpc

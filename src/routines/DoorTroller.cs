@@ -19,7 +19,7 @@ namespace HydraMenu.routines
 			{
 				Hydra.notifications.Send("Door Troller", "Door troller has been disabled as you either left the game or the current map does not support unlocking doors.", 5);
 
-				this.Enabled = false;
+				Enabled = false;
 				return;
 			}
 
@@ -27,7 +27,7 @@ namespace HydraMenu.routines
 			{
 				Hydra.notifications.Send("Door Troller", "Door troller was disabled as this map does not have any doors.", 5);
 
-				this.Enabled = false;
+				Enabled = false;
 				return;
 			}
 
@@ -35,7 +35,7 @@ namespace HydraMenu.routines
 			{
 				Hydra.notifications.Send("Door Troller", "Door troller can only work if you are the host, or if the current map supports unlocking doors.", 5);
 
-				this.Enabled = false;
+				Enabled = false;
 				return;
 			}
 

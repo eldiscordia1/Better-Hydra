@@ -16,7 +16,7 @@ namespace HydraMenu.routines
 		{
 			if(ShipStatus.Instance == null)
 			{
-				this.Enabled = false;
+				Enabled = false;
 				Hydra.notifications.Send("Trigger Spores", "Auto-Trigger Spores was disabled as you left the game.", 10);
 
 				return;
@@ -24,7 +24,7 @@ namespace HydraMenu.routines
 
 			if(Utilities.GetCurrentMap() != MapNames.Fungle)
 			{
-				this.Enabled = false;
+				Enabled = false;
 				Hydra.notifications.Send("Trigger Spores", "Auto-Trigger Spores was disabled as this option only works in The Fungle.", 10);
 
 				return;
