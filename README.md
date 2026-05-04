@@ -8,9 +8,7 @@ Hydra is a [BepInEx](https://github.com/BepInEx/BepInEx) Among Us mod built with
 We have a Discord server, feel free to join and talk, ask for help, or offer suggestions: https://discord.gg/N7azGPHm5F
 
 # Features
-> [!NOTE]
-> This repo is a heavily stripped-down version with features I deem too powerful removed to prevent abuse, such as [being able to ban players from lobbies without being host](https://streamable.com/wtb7jl) and [becoming immortal without being host](https://streamable.com/k1b0m0).
->
+
 > Being able to ban players from lobbies without being host is a great way to deal with annoying players who call meetings as soon as the game starts, or ban hackers from lobbies I am inside without having to reach a unanimous votekick, however this opens the door for abuse where someone could ban all the imposters from the lobby to insta-win or banning players who suspect you being an imposter.
 
 - In-game notifications
